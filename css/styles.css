@@ -162,12 +162,17 @@ ul {
     color: var(--accent-color);
 }
 
-.site-auth .icon {
+.site-auth .item {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     line-height: 1.14;
     fill: #757575;
-
 }
+
+.site-auth .icon {
+    margin-right: 10px;
+} 
 
 .site-auth .icon:hover,
 .site-auth .icon:focus {
