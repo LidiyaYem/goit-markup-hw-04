@@ -159,6 +159,7 @@ ul {
 
 .site-auth .link-contact:hover,
 .site-auth .link-contact:focus {
+    fill: var(--accent-color);
     color: var(--accent-color);
 }
 
@@ -174,8 +175,8 @@ ul {
     margin-right: 10px;
 } 
 
-.site-auth .icon:hover,
-.site-auth .icon:focus {
+.site-auth .item:hover .icon,
+.site-auth .item:focus .icon {
     fill: var(--accent-color);
     cursor: pointer;
 }
@@ -261,7 +262,6 @@ ul {
     color: var(--hero-text-color);
     background-color: var(--accent-color);
     font-family: inherit;
-    cursor: pointer;
     text-align: center;
 }
 
@@ -306,18 +306,18 @@ ul {
 
 .button:hover,
 .button:focus {
-    color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .button-primary:hover,
 .button-primary:focus {
-    /* color: var(--accent-color); */
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .button-secondary:hover,
 .button-secondary:focus {
-    color: var(--accent-color);
+    color: var(--hero-text-color);
+    background-color: var(--accent-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -386,19 +386,27 @@ ul {
 }
 
 .thumb.antenna {
-    padding: 25px 102.34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .thumb.clock {
-    padding: 25px 102.34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .thumb.diagram {
-    padding: 33.15px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .thumb.astronaut {
-    padding: 25px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Чим ми займаємось */
@@ -439,6 +447,14 @@ ul {
 
 .social-links-item {
     display: block;
+}
+
+.social-links-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-contact {
+    display: block;
     padding: 12px 12px;
     width: 44px;
     height: 44px;
@@ -446,12 +462,21 @@ ul {
     border-radius: 50%;
 }
 
-.social-links-item:not(:last-child) {
-    margin-right: 10px;
+.social-links .social-contact {
+    text-decoration: none;
+    fill: #AFB1B8;
 }
 
-.social-links-item:hover,
-.social-links-item:focus {
+.social-links .social-contact:hover,
+.social-links .social-contact:focus {
+    fill: var(--hero-text-color);
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.social-links-item:hover .social-contact,
+.social-links-item:focus .social-contact {
+    fill: var(--hero-text-color);
     background-color: var(--accent-color);
 }
 
@@ -466,18 +491,6 @@ ul {
     border-radius: 0px 0px 4px 4px;
 }
 
-.social-links .social-link {
-    text-decoration: none;
-    fill: #AFB1B8;
-}
-
-.social-links .social-link:hover,
-.social-links .social-link:focus {
-    fill: #FFF;
-    cursor: pointer;
-}
-
-
 /* Постоянные клиенты */
 
 .clients-list {
@@ -489,7 +502,7 @@ ul {
     margin-right: 30px;
 }
 
-.thumb-clients {
+.client-info {
     display: block;
     padding: 16px 32px;
     width: 170px;
@@ -502,16 +515,21 @@ ul {
     border: 1px solid #AFB1B8;
 }
 
-.thumb-clients .client {
+.client-info .client {
     text-decoration: none;
     fill: #AFB1B8;
 }
 
-.thumb-clients .client:hover,
-.thumb-clients .client:focus {
+.client-info:hover .client,
+.client-info:focus .client {
     fill: var(--accent-color);
     cursor: pointer;
 }
+
+.client-info:hover,
+.client-info:focus {
+    border: 1px solid var(--accent-color);
+} 
 
 /* Portfolio */
 
@@ -561,8 +579,6 @@ ul {
 
 .work-lists .item:hover,
 .work-lists .item:focus {
-/* border: 1px solid #EEEEEE;
-box-sizing: border-box; */
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
     cursor: pointer;
 }
@@ -626,4 +642,8 @@ box-sizing: border-box; */
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
+}
+
+.social-contact.footer {
+    background-color: rgba(255, 255, 255, 0.1);
 }
